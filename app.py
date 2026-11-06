@@ -140,10 +140,6 @@ with st.sidebar:
         (max(ano_min, 2010), ano_max)
     )
     generos = st.multiselect('Gêneros', generos_ordenados, default=generos_ordenados)
-    st.markdown(
-        '<p class="nota">Cada música é contada uma única vez.</p>',
-        unsafe_allow_html=True
-    )
 
 df = spotify[
     (spotify['popularidade'] >= pop_min)
