@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap');
+
+:root {
+    --preto: #030407;
+    --superficie: #0b1020;
+    --superficie-2: #121a30;
+    --borda: #1a2340;
+    --cobalto: #1558c9;
+    --cobalto-claro: #6fa0ff;
+    --lima: #d4ff24;
+    --texto: #f2f5fa;
+    --texto-suave: #8ea0c2;
+    --raio: 18px;
+}
+
+/* Base */
+html,
+body,
+[data-testid="stAppViewContainer"],
+[data-testid="stApp"] {
+    background-color: var(--preto);
+    color: var(--texto);
+    font-family: 'Inter', sans-serif;
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+#MainMenu,
+footer {
+    visibility: hidden;
+}
+
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    max-width: 1400px;
+}
+
+p,
+label,
+li,
+span,
+div {
+    font-family: 'Inter', sans-serif;
+}
+
+[data-testid="stAppViewContainer"] p,
+[data-testid="stAppViewContainer"] label {
+    color: var(--texto);
+}
+
+/* Barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--preto);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--borda);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cobalto);
+}
+
+/* Títulos */
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic;
+    letter-spacing: -0.3px;
+}
+
+h1 {
+    color: var(--lima);
+    font-weight: 700;
+}
+
+h2,
+h3 {
+    color: var(--texto);
+    font-weight: 600;
+    font-size: 1.35rem !important;
+    margin-top: 0.5rem;
+}
+
+/* Cabeçalho */
+.hero {
+    background:
+        radial-gradient(circle at 10% 15%, rgba(21, 88, 201, 0.50), transparent 55%),
+        radial-gradient(circle at 95% 0%, rgba(212, 255, 36, 0.14), transparent 45%),
+        var(--superficie);
+    border: 1px solid rgba(21, 88, 201, 0.55);
+    border-radius: 26px;
+    padding: 28px 34px;
+    margin-bottom: 18px;
+    box-shadow: 0 10px 40px rgba(21, 88, 201, 0.18);
+}
+
+.hero-topo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Ícone do cabeçalho */
+.hero-topo::before {
+    content: '';
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='23' fill='%23030407' stroke='%231558C9' stroke-width='2'/%3E%3Cg stroke='%23D4FF24' stroke-width='3.5' stroke-linecap='round'%3E%3Cline x1='12' y1='21' x2='12' y2='27'/%3E%3Cline x1='18' y1='15' x2='18' y2='33'/%3E%3Cline x1='24' y1='10' x2='24' y2='38'/%3E%3Cline x1='30' y1='16' x2='30' y2='32'/%3E%3Cline x1='36' y1='21' x2='36' y2='27'/%3E%3C/g%3E%3C/svg%3E") no-repeat center / contain;
+    filter: drop-shadow(0 0 12px rgba(212, 255, 36, 0.35));
+}
+
+.hero h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.7rem;
+    line-height: 1.1;
+}
+
+.hero p {
+    margin: 6px 0 0 0;
+    color: var(--texto-suave) !important;
+    font-size: 1rem;
+}
+
+/* Menu lateral */
+section[data-testid="stSidebar"] {
+    background-color: var(--superficie);
+    border-right: 1px solid var(--borda);
+}
+
+section[data-testid="stSidebar"] label p {
+    color: var(--texto-suave) !important;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+}
+
+.rotulo {
+    color: var(--lima) !important;
+    font-size: 0.75rem !important;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+}
+
+.nota {
+    color: var(--texto-suave) !important;
+    font-size: 0.78rem !important;
+    line-height: 1.45;
+    border-top: 1px solid var(--borda);
+    padding-top: 12px;
+    margin-top: 18px;
+}
+
+/* Abas */
+[data-baseweb="tab-list"] {
+    gap: 6px;
+    border-bottom: 1px solid var(--borda);
+}
+
+button[data-baseweb="tab"] {
+    background: transparent;
+    border-radius: 12px 12px 0 0;
+    padding: 10px 18px;
+    height: auto;
+    color: var(--texto-suave);
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+button[data-baseweb="tab"] p {
+    color: inherit !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+button[data-baseweb="tab"]:hover {
+    background: var(--superficie-2);
+    color: var(--texto);
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--lima);
+    background: var(--superficie);
+}
+
+[data-baseweb="tab-highlight"] {
+    background-color: var(--lima) !important;
+    height: 3px !important;
+}
+
+[data-baseweb="tab-border"] {
+    display: none;
+}
+
+/* Métricas */
+[data-testid="stMetric"] {
+    background: linear-gradient(160deg, var(--superficie-2), var(--superficie));
+    padding: 16px 18px;
+    border-radius: var(--raio);
+    border: 1px solid var(--borda);
+    border-top: 3px solid var(--lima);
+    box-shadow: 0 6px 22px rgba(21, 88, 201, 0.18);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-2px);
+    border-color: var(--cobalto);
+}
+
+[data-testid="stMetricLabel"] p {
+    color: var(--texto-suave) !important;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--lima);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+/* Textos de destaque */
+.insight {
+    background: linear-gradient(90deg, rgba(212, 255, 36, 0.10), rgba(212, 255, 36, 0));
+    border-left: 4px solid var(--lima);
+    border-radius: 0 14px 14px 0;
+    padding: 14px 20px;
+    margin: 14px 0 22px 0;
+    color: var(--texto);
+    font-size: 0.97rem;
+    line-height: 1.6;
+}
+
+.insight span {
+    display: block;
+    color: var(--lima);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+/* Gráficos */
+[data-testid="stPlotlyChart"] {
+    background-color: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 10px;
+    overflow: hidden;
+}
+
+/* Campos de entrada */
+[data-baseweb="select"] > div,
+[data-baseweb="input"] > div,
+[data-baseweb="base-input"] {
+    background-color: var(--superficie-2) !important;
+    border-color: var(--borda) !important;
+    border-radius: 12px !important;
+    color: var(--texto);
+}
+
+[data-baseweb="select"] > div:hover,
+[data-baseweb="input"] > div:hover {
+    border-color: var(--cobalto) !important;
+}
+
+[data-baseweb="input"] input {
+    color: var(--texto) !important;
+}
+
+[data-baseweb="tag"] {
+    background-color: var(--cobalto) !important;
+    color: var(--texto) !important;
+    border-radius: 999px !important;
+}
+
+[data-baseweb="popover"] ul {
+    background-color: var(--superficie-2);
+}
+
+[data-baseweb="popover"] li:hover {
+    background-color: var(--cobalto);
+}
+
+/* Controle deslizante */
+[data-testid="stSlider"] [role="slider"] {
+    background-color: var(--lima) !important;
+    border: 2px solid var(--preto);
+    box-shadow: 0 0 12px rgba(212, 255, 36, 0.65);
+}
+
+[data-testid="stSliderThumbValue"],
+[data-testid="stSliderTickBarMin"],
+[data-testid="stSliderTickBarMax"] {
+    color: var(--lima) !important;
+}
+
+/* Botões */
+.stButton > button,
+.stDownloadButton > button {
+    background-color: var(--lima);
+    color: var(--preto);
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    padding: 0.55rem 1.6rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stButton > button p,
+.stDownloadButton > button p {
+    color: var(--preto) !important;
+    font-weight: 700;
+}
+
+.stButton > button:hover,
+.stDownloadButton > button:hover {
+    background-color: var(--lima);
+    color: var(--preto);
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px rgba(212, 255, 36, 0.55);
+}
+
+/* Tabela */
+div[data-testid="stDataFrame"] {
+    border-radius: var(--raio);
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    margin: 10px 0 14px 0;
+}
+
+/* Avisos e divisórias */
+[data-testid="stAlert"] {
+    background-color: var(--superficie-2);
+    border-radius: 14px;
+    border: 1px solid var(--cobalto);
+}
+
+hr {
+    border-color: var(--borda);
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+    padding: 28px 0 8px 0;
+    border-top: 1px solid var(--borda);
+    margin-top: 36px;
+}
+
+.rodape b {
+    color: var(--lima);
+    font-weight: 600;
+}
